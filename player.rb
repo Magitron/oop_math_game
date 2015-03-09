@@ -7,3 +7,8 @@ class Player
     @lives = 3
   end
 end
+
+
+
+class PlayerDeadError < StandardError
+end

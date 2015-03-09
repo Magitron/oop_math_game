@@ -119,6 +119,11 @@ class Game
           break if @player1.lives == 0 || @player2.lives == 0
         end
         winner
+        begin
+        raise PlayerDeadError, "All out of lives!"
+        rescue
+          puts "Rescued!"
+        end
         system "cowsay 'Game over'"
         puts "\nThe winner is #{@winner}!\n Score:\n  Player 1: #{@player1.score}\n  Player 2: #{@player2.score}".light_magenta
         break unless newgame
